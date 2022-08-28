@@ -48,6 +48,8 @@ namespace BancoAPP
 
         public Banco()
         {
+            Console.WriteLine("Bienvenido al Súper Banco");
+            
             Console.Write("Ingrese nombre del cliente 1: ");
             Usuario1 = new Cliente(Console.ReadLine());
             Console.Write("Ingrese nombre del cliente 2: ");
@@ -96,7 +98,7 @@ namespace BancoAPP
                 {
                     Usuario3.Depositar(montoDeposito);
                 }
-                else 
+                else
                 {
                     Console.Write("Nombre no registrado: ");
                 }
@@ -137,17 +139,20 @@ namespace BancoAPP
 
     }
 
-    private static void Main(string[] args)
+    class main
+    {
+        private static void Main(string[] args)
+
         {
             bool salir = false;
             Banco banco1 = new Banco();
 
             while (!salir)
             {
-
+                
                 try
                 {
-
+                    
                     Console.WriteLine("1. Si desea guardar dinero marque 1");
                     Console.WriteLine("2. Si desea retirar dinero marque 2");
                     Console.WriteLine("3. Si desea salir del menú marque 3");
@@ -165,14 +170,14 @@ namespace BancoAPP
                             break;
 
                         case 3:
-                            Console.WriteLine("Has elegido salir del menú");
-                        
+                            Console.WriteLine("Seguro que deseas salir del menú? pulsa 3 para confirmar");
+
                             salir = true;
                             break;
 
-                    default:
-      
-                        Console.WriteLine("Por favor elige una opcion entre 1 y 3");
+                        default:
+
+                            Console.WriteLine("Por favor elige una opcion entre 1 y 3");
                             break;
                     }
 
@@ -181,10 +186,21 @@ namespace BancoAPP
                 {
                     Console.WriteLine(e.Message);
                 }
+
+                banco1.TotalDepositos();
+                
             }
-            banco1.TotalDepositos();
+            
             Console.ReadLine();
+            
         }
+
+        
     }
+
+}
+
+
+
 
 

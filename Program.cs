@@ -163,15 +163,16 @@ namespace BancoAPP
                     {
                         case 1:
                             Console.WriteLine("Has elegido depositar dinero");
+                            banco1.Operar(opcion);
                             break;
-
+                            
                         case 2:
                             Console.WriteLine("Has elegido retirar dinero");
+                            banco1.Operar(opcion);
                             break;
 
                         case 3:
-                            Console.WriteLine("Seguro que deseas salir del menú? pulsa 3 para confirmar");
-
+                            Console.WriteLine("Seguro que deseas salir del menú? pulsa 3 para confirmar");  
                             salir = true;
                             break;
 
